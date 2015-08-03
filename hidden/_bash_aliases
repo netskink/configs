@@ -1,0 +1,4 @@
+alias vi=vim
+alias tree='tree -A'
+alias irssi='irssi -n elvisP -c irc.freenode.net'
+

@@ -1,0 +1,212 @@
+# using these guides 
+# 
+# http://ubuntuforums.org/showthread.php?t=41538
+# http://blog.twistedcode.org/2008/04/lscolors-explained.html
+# http://www.bigsoft.co.uk/blog/index.php/2008/04/11/configuring-ls_colors
+# http://linux.about.com/library/cmd/blcmdl5_dir_colors.htm
+
+
+# These codes can also be combined with one another:
+
+# di=5;34;43
+# Setting the LS_COLORS di parameter to the above example will make directories 
+# appear in flashing blue text with an orange background 
+# (just because flashing text is available doesn't mean you should use it!)
+
+# di	Directory
+# fi	File
+# ln	Symbolic Link
+# pi	Fifo file
+# so	Socket file
+# bd	Block (buffered) special file
+# cd	Character (unbuffered) special file
+# or	Symbolic Link pointing to a non-existent file (orphan)
+
+# no	NORMAL, NORM	Global default, although everything should be something
+# fi	FILE	Normal file
+# di	DIR	Directory
+# ln	SYMLINK, LINK, LNK	Symbolic link. If you set this to 'target' instead 
+#       of a numerical value, the color is as for the file pointed to.
+# pi	FIFO, PIPE	Named pipe
+# do	DOOR	Door
+# bd	BLOCK, BLK	Block device
+# cd	CHAR, CHR	Character device
+# or	ORPHAN	Symbolic link pointing to a non-existent file
+# so	SOCK	Socket
+# su	SETUID	File that is setuid (u+s)
+# sg	SETGID	File that is setgid (g+s)
+# tw	STICKY_OTHER_WRITABLE	Directory that is sticky and 
+#             other-writable (+t,o+w)
+# ow	OTHER_WRITABLE	Directory that is other-writable (o+w) and not sticky
+# st	STICKY	Directory with the sticky bit set (+t) and not other-writable
+# ex	EXEC	Executable file (i.e. has +x set in permissions)
+# mi	MISSING	Non-existent file pointed to by a symbolic link (visible when 
+#       you type ls -l)
+# lc	LEFTCODE, LEFT	Opening terminal code
+# rc	RIGHTCODE, RIGHT	Closing terminal code
+# ec	ENDCODE, END	Non-filename text
+# *.extension	 	Every file using this extension e.g. *.jpg
+# The keys (above) are assigned a colour pattern which is a semi-colon 
+# separated list of colour codes.
+
+# these at the top seem to work
+FILE 00 # normal file.  FILE can be replaced with fi
+DIR 00;32	#directory.  DIR can be replaced with di
+#LINK 01;36 # symbolic link.  LINK can be replaced with ln
+ORPHAN 5;37;41	# Non-existant file pointed to by a symbolic link (ie. ls -l)
+MISSING 5;37;41	# Non-existant file pointed to by a symbolic link (ie. ls -l)
+EXEC 00:33
+LINK target
+
+
+# these file extensions work
+.tar 01;31
+.tgz 01;31
+.arj 01;31
+.taz 01;31
+.lzh 01;31
+.lzma 01;31
+.tlz 01;31
+.txz 01;31
+.zip 01;31
+.z 01;31
+.Z 01;31
+.dz 01;31
+.gz 01;31
+.lz 01;31
+.xz 01;31
+.bz2 01;31
+.bz 01;31
+.tbz 01;31
+.tbz2 01;31
+.tz 01;31
+.deb 01;31
+.rpm 01;31
+.jar 01;31
+.war 01;31
+.ear 01;31
+.sar 01;31
+.rar 01;31
+.ace 01;31
+.zoo 01;31
+.cpio 01;31
+.7z 01;31
+.rz 01;31
+.jpg 01;35
+.jpeg 01;35
+.gif 01;35
+.bmp 01;35
+.pbm 01;35
+.pgm 01;35
+.ppm 01;35
+.tga 01;35
+.xbm 01;35
+.xpm 01;35
+.tif 01;35
+.tiff 01;35
+.png 01;35
+.svg 01;35
+.svgz 01;35
+.mng 01;35
+.pcx 01;35
+.mov 01;35
+.mpg 01;35
+.mpeg 01;35
+.m2v 01;35
+.mkv 01;35
+.webm 01;35
+.ogm 01;35
+.mp4 01;35
+.m4v 01;35
+.mp4v 01;35
+.vob 01;35
+.qt 01;35
+.nuv 01;35
+.wmv 01;35
+.asf 01;35
+.rm 01;35
+.rmvb 01;35
+.flc 01;35
+.avi 01;35
+.fli 01;35
+.flv 01;35
+.gl 01;35
+.dl 01;35
+.xcf 01;35
+.xwd 01;35
+.yuv 01;35
+.cgm 01;35
+.emf 01;35
+.axv 01;35
+.anx 01;35
+.ogv 01;35
+.ogx 01;35
+.aac 00;36
+.au 00;36
+.flac 00;36
+.mid 00;36
+.midi 00;36
+.mka 00;36
+.mp3 00;36
+.mpc 00;36
+.ogg 00;36
+.ra 00;36
+.wav 00;36
+.axa 00;36
+.oga 00;36
+.spx 00;36
+.xspf 00;36
+
+ 
+
+# The *.deb=90 parameter in the example above tells ls to display any files ending with a .deb extension using the color specified, 90 or dark grey in this case. This can be applied to any types of files (eg. you could use *.jpg=33 to make JPEG files appear orange). Any number of parameters can go into the LS_COLORS variable, as long as the parameters are separated by colons.
+
+
+
+# Color Codes 
+
+#   EFFECTS
+# 00 =	Default Colour
+# 01 =	Bold
+# 04 =	Underlined
+# 05 =	Flashing Text
+# 07 =	Reverse Field
+
+#   COLORS 
+# 30 =	Black
+# 31 =	Red
+# 32 =	Green
+# 33 =	Orange
+# 34 =	Blue
+# 35 =	Purple
+# 36 =	Cyan
+# 37 =	Grey
+
+#   BACKGROUND COLORS
+# 40 =	Black Background
+# 41 =	Red Background
+# 42 =	Green Background
+# 43 =	Orange Background
+# 44 =	Blue Background
+# 45 =	Purple Background
+# 46 =	Cyan Background
+# 47 =	Grey Background
+
+#   EXTRA COLORS
+# 90 =	Dark Grey
+# 91 =	Light Red
+# 92 =	Light Green
+# 93 =	Yellow
+# 94 =	Light Blue
+# 95 =	Light Purple
+# 96 =	Turquoise
+# 100 =	Dark Grey Background
+# 101 =	Light Red Background
+# 102 =	Light Green Background
+# 103 =	Yellow Background
+# 104 =	Light Blue Background
+# 105 =	Light Purple Background
+# 106 =	Turquoise Background
+
+
+

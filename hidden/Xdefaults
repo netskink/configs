@@ -1,0 +1,7 @@
+# on archlinux, it uses .Xdefaults instead of .Xresources
+
+
+xterm*font: *-fixed-*-*-*-18-*
+xterm*ScrollBar: true
+# To get black terminals
+XTerm*reverseVideo: on
